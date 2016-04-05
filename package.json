@@ -1,0 +1,20 @@
+{
+  "name": "full-screen-video-bg",
+  "version": "1.0.0",
+  "description": "Lord Knows",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.11.2",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.2.0",
+    "gulp-watch": "^4.3.5",
+    "harp": "^0.20.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "harp server & browser-sync start --proxy 'localhost:9000' --files '**/*.coffee, **/*.jade, assets/css/**/*.scss'"
+  },
+  "author": "",
+  "license": "ISC"
+}

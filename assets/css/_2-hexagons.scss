@@ -1,0 +1,141 @@
+.content {
+    width: 900px;
+    height: 480px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -270px;
+    margin-left: -450px;
+    z-index: 3;
+    text-align: center;
+    overflow: hidden;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    padding: 30px 0;
+    display: none;
+}
+
+
+.row1 {
+    clear: both;
+    overflow: hidden;
+    margin-top: -100px;
+}
+.row2 {
+    clear: both;
+    overflow: hidden;
+    margin-top: -263px;
+}
+.hexagon {
+    width: 150px;
+    height: 400px;
+    overflow: hidden;
+    visibility: hidden;
+    -webkit-transform: rotate(120deg);
+    -moz-transform: rotate(120deg);
+    -o-transform: rotate(120deg);
+    -ms-transform: rotate(120deg);
+    transform: rotate(120deg);
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 10px;
+}
+.hexagon-in1 {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: rotate(-60deg);
+    -moz-transform: rotate(-60deg);
+    -o-transform: rotate(-60deg);
+    -ms-transform: rotate(-60deg);
+    transform: rotate(-60deg);
+}
+.hexagon-in2 {
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+    -webkit-transform: rotate(-60deg);
+    -moz-transform: rotate(-60deg);
+    -o-transform: rotate(-60deg);
+    -ms-transform: rotate(-60deg);
+    transform: rotate(-60deg);
+    background: #be4b38;
+    opacity: 1;
+}
+.hexagon:hover .hexagon-in2 {
+    background: #999;
+    opacity: 0.6;
+}
+.hex-overlay {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    opacity: 0;
+}
+.hexagon-in2 span {
+    font-family: 'Oleo Script Swash Caps', cursive;
+    font-weight: bold;
+    font-size: 80px;
+    color: #fff;
+    margin: 0 auto;
+    top: 50%;
+    right: 4%;
+    text-align: center;
+    position: relative;
+    line-height: 0px;
+}
+#hex-image1 {
+    background: url(images/image1.jpg);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 300px;
+}
+#hex-image2 {
+    background: url(images/image2.jpg);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 300px;
+}
+#hex-image3 {
+    background: url(images/image3.jpg);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 300px;
+}
+.green { background-color: #425b62 }
+.gray { background-color: #786078 }
+#icon1 {
+    background-image: url(images/icon1.png);
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+#icon2 {
+    background-image: url(images/icon2.png);
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+#icon3 {
+    background-image: url(images/icon3.png);
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+#icon4 {
+    background-image: url(images/icon4.png);
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+#icon5 {
+    background-image: url(images/icon5.png);
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+#icon6 {
+    background-image: url(images/icon6.png);
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+#icon7 {
+    background-image: url(images/icon7.png);
+    background-repeat: no-repeat;
+    background-position: 50%
+}

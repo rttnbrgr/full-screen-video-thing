@@ -1,0 +1,98 @@
+@import '0-normalize';
+@import 'bourbon/bourbon';
+
+// FONT VIA GOOGLE FONTS
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300,700);
+@import url(https://fonts.googleapis.com/css?family=Inconsolata:400,700);
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900);
+
+$link: white;
+$dark: black;
+
+body {
+    margin: 0;
+    padding: 0;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased !important;
+    font-smooth: always;
+
+    font-family: 'Inconsolata', monospace;
+    color: $link;
+}
+
+
+// Video
+@import '2-video';
+
+// hide old shit
+.content { display: none; }
+// @import url('2-hexagons');
+
+.hero {
+    text-align: center;
+    position: relative;
+    z-index: 3;    
+}
+h1 {
+  color: red;;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  // font-weight: 400;
+  color: white;
+  font-size: 5em;
+  text-transform: uppercase;
+
+
+  // background-color: white;
+  // color: black;
+  display: inline-block;
+  padding: 0.25rem 2rem;    
+
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  text-transform: none;
+
+  margin-bottom: 1rem;
+  margin-top: 0;
+  text-shadow: 0px 2px 2px rgba(0,0,0,.4);
+
+}
+
+p {
+    padding: 1rem 2rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    max-width: 45rem;
+    margin: 1rem auto;
+    background-color: rgba(0,0,0,.5);
+}
+
+.btn {
+    
+    outline: 1px solid $link;
+    color: $link;
+    font-size: 1em;
+    padding: 0.4em 1em;
+    text-decoration: none;
+    // text-transform: uppercase;
+
+    &:hover {
+        background-color: $link;
+        color: $dark;
+    }
+
+}
+
+h2 {
+    color: pink;
+}
+
+
+
+.hero-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}

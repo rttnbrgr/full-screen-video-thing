@@ -483,6 +483,32 @@ p {
     left: 0;
     background-color: pink; }
 
+.video__btn {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 2rem;
+  font-family: monospace;
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.5);
+  -webkit-transition: color linear 0.2s;
+  -moz-transition: color linear 0.2s;
+  transition: color linear 0.2s; }
+  .video__btn:hover {
+    color: white;
+    -webkit-transition: color ease-in 0.5s;
+    -moz-transition: color ease-in 0.5s;
+    transition: color ease-in 0.5s;
+    cursor: pointer; }
+  .video__btn.video__play {
+    position: fixed;
+    top: 0;
+    right: 0; }
+  .video__btn.video__pause {
+    position: fixed;
+    top: 2rem;
+    right: 0; }
+
 @media screen and (max-device-width: 800px) {
   .overlay, #overlay {
     background: url(../img/wave-god.jpg) #000 no-repeat 25% center fixed;

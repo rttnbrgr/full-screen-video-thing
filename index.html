@@ -19,5 +19,36 @@
   <video id="video--bg" muted autoplay loop poster="assets/img/wave-god.jpg">
     <source src="assets/video/wavy-web.webm" type="video/webm">
     <source src="assets/video/wavy-web.mp4" type="video/mp4">
-  </video>
+  </video><span id="pause" class="video__pause video__btn">&#9612;&#9612;</span><span id="play" class="video__play video__btn">&#9658;</span>
 </body>
+<script type="text/javascript">
+  var vid = document.getElementById("video--bg");
+  var pause = document.getElementById('pause');  
+  var play = document.getElementById('play');
+  //- function vidFade() {
+  //-     vid.classList.add("stopfade");
+  //- }
+  //- vid.addEventListener('ended', function() {
+  //-     // only functional if "loop" is removed 
+  //-      vid.pause();
+  //-   // to capture IE10
+  //-   vidFade();
+  //- });
+  pause.addEventListener('click', function() {
+    vid.loop = false;
+    vid.pause();
+  });
+  play.addEventListener('click', function() {
+    vid.play();
+    vid.loop = true;
+  })
+  //- pauseButton.addEventListener("click", function() {
+  //-     vid.classList.toggle("stopfade");
+  //-   if (vid.paused) {
+  //- vid.play();
+  //-     pauseButton.innerHTML = "Pause";
+  //-   } else {
+  //-         vid.pause();
+  //-         pauseButton.innerHTML = "Paused";
+  //-   }
+</script>

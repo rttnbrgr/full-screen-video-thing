@@ -65,6 +65,28 @@
   }
 }
 
+.video__btn {
+  @include position(fixed, 0 0 null null);
+  padding: 2rem;
+  font-family: monospace;
+  font-size: 2rem;
+  color: rgba(255,255,255, 0.5);
+  @include transition(color linear 0.2s);
+  
+  &:hover {
+    color: rgba(255,255,255,1);
+    @include transition(color ease-in 0.5s);
+    cursor: pointer;
+  }
+
+  &.video__play {
+    @include position(fixed, 0 0 null null);
+  }
+  &.video__pause {
+    @include position(fixed, 2rem 0 null null);
+  }
+}
+
 
 @media screen and (max-device-width: 800px) {
   .overlay, #overlay {

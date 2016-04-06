@@ -25,17 +25,18 @@ body {
 @import '2-hero';
 // Video
 @import '2-video';
+@import '2-hexagons';
 
 
 // hide old shit
 .content { display: none; }
-// @import url('2-hexagons');
 
 .hero {
     text-align: center;
     position: relative;
     z-index: 3;    
 }
+
 h1 {
   color: red;;
   font-family: 'Roboto', sans-serif;

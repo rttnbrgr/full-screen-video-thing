@@ -16,6 +16,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "harp server & browser-sync start --proxy 'localhost:9000' --files '**/*.coffee, **/*.jade, assets/css/**/*.scss'"
   },
-  "author": "",
+  "author": "Nathan Rothenberger",
   "license": "ISC"
 }

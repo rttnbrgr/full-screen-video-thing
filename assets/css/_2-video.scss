@@ -1,3 +1,7 @@
+/*
+  OLD STUFF
+*/
+
 #bg {
     position: absolute;
     position: fixed;
@@ -7,6 +11,23 @@
     height: 200%;
     z-index: -1;
 }
+
+#bg video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    min-width: 50%;
+    min-height: 50%;
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+}
+
+/*
+  new STUFF
+*/
 
 .overlay,
 #overlay {
@@ -24,22 +45,6 @@
     z-index: -1;
 }
 
-#bg video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    min-width: 50%;
-    min-height: 50%;
-    filter: blur(3px);
-    -webkit-filter: blur(3px);
-}
-
-
-
-
 #video--bg {
   display: block;
   @include position(fixed, 50% null null 50%);
@@ -48,9 +53,8 @@
   @include size(auto);
   z-index: -100;
   @include transform(translateX(-50%) translateY(-50%) );
-  background: url('../img/wave-god.png') center center no-repeat;
+  background: url('../img/wave-god.jpg') center center no-repeat;
   background-size: cover;
-
 
   color: pink;
 
@@ -61,9 +65,10 @@
   }
 }
 
+
 @media screen and (max-device-width: 800px) {
   .overlay, #overlay {
-    background: url(../img/wave-god.png) #000 no-repeat 25% center fixed;
+    background: url(../img/wave-god.jpg) #000 no-repeat 25% center fixed;
     background-size: cover;
 
     &::before {

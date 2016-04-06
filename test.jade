@@ -3,20 +3,27 @@ html(lang="en")
 
 head
   meta(charset="utf-8")
-  title= Full Screen Video BG
+  title Full Screen Video BG
+
+  meta(name="viewport" content="width=device-width, initial-scale=1")
   link(href="assets/css/wavy.css" rel="stylesheet" type="text/css")
-  // may not need these
-  link(href="http://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps:700" rel="stylesheet" type="text/css")
+  <!--[if lt IE 9]>
+  script(type="text/javascript").
+    document.createElement('video');
+  <![endif]-->
 
 body
   
-  section.hero
-    h1 Wave Gawd
-    a[href=#] Watch on Youtube
+  .hero-wrapper
+    section.hero
+      h1 Wave Gawd 2
+      p YOLO hashtag pug, tofu mlkshk meh gochujang godard tumblr helvetica. Art party gastropub +1 lo-fi, roof party marfa artisan. Intelligentsia 90's organic, roof party marfa asymmetrical fanny pack everyday carry sustainable tacos cray.
+      nav
+        a.btn(href="https://www.youtube.com/watch?v=ITZNHsad2fE" target="_blank") Watch
+        a.btn(href="https://soundcloud.com/krooks-x-up/sets/stanley-vaughn-the-rarity" target="_blank") Listen
 
-  nav.social
+  .overlay
 
-  #overlay
-
-  #bg
-    video#bg-video[muted autoplay loop]
+  video#video--bg(muted autoplay loop poster="assets/img/wave-god.png")
+    source(src="assets/video/wavy-web.webm" type="video/webm")
+    source(src="assets/video/wavy-web.mp4" type="video/mp4")

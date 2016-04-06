@@ -372,6 +372,12 @@ body {
   font-family: 'Inconsolata', monospace;
   color: white; }
 
+.hero-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh; }
+
 #bg {
   position: absolute;
   position: fixed;
@@ -381,6 +387,7 @@ body {
   height: 200%;
   z-index: -1; }
 
+.overlay,
 #overlay {
   background: url(images/pattern.png);
   background-repeat: repeat;
@@ -389,7 +396,14 @@ body {
   left: 0;
   min-width: 100%;
   min-height: 100%;
-  z-index: 2; }
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: -1; }
 
 #bg video {
   position: absolute;
@@ -404,6 +418,7 @@ body {
   -webkit-filter: blur(3px); }
 
 #video--bg {
+  display: block;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -417,7 +432,33 @@ body {
   -ms-transform: translateX(-50%) translateY(-50%);
   -o-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
-  background-size: cover; }
+  background: url("../img/wave-god.png") center center no-repeat;
+  background-size: cover;
+  color: pink; }
+  #video--bg::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: pink; }
+
+@media screen and (max-device-width: 800px) {
+  .overlay, #overlay {
+    background: url(../img/wave-god.png) #000 no-repeat 25% center fixed;
+    background-size: cover; }
+    .overlay::before, #overlay::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: -1; }
+  #video--bg {
+    display: none; } }
 
 .content {
   display: none; }

@@ -21,9 +21,11 @@ body {
     color: $link;
 }
 
-
+// Hero
+@import '2-hero';
 // Video
 @import '2-video';
+
 
 // hide old shit
 .content { display: none; }
@@ -91,8 +93,8 @@ h2 {
 
 
 .hero-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
 }

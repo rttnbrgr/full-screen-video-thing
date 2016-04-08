@@ -362,39 +362,37 @@ textarea {
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inconsolata', monospace;
   -webkit-font-smoothing: antialiased !important;
   font-smooth: always;
-  font-family: 'Inconsolata', monospace;
   color: white; }
 
 h1 {
-  color: red;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  color: white;
-  font-size: 3em;
-  text-transform: uppercase;
   display: inline-block;
+  margin: 0 auto;
   padding: 0.25rem 2rem;
+  font-size: 3em;
+  line-height: 1;
   font-family: 'Playfair Display', serif;
   font-weight: 900;
   text-transform: none;
-  margin-bottom: 1rem;
-  margin-top: 0;
-  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
-  line-height: 1;
-  margin-bottom: 0; }
+  color: white;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4); }
 
 p {
+  margin: 1rem auto;
   padding: 1rem 2rem;
-  padding-right: 2rem;
-  padding-left: 2rem;
-  max-width: 40rem;
-  margin: 1rem auto; }
+  max-width: 40rem; }
 
 @media screen and (min-width: 800px) {
   h1 {
@@ -440,7 +438,6 @@ p {
 */
 .overlay,
 #overlay {
-  background: url(images/pattern.png);
   background-repeat: repeat;
   position: fixed;
   top: 0;
@@ -487,29 +484,31 @@ p {
   position: fixed;
   top: 0;
   right: 0;
+  display: block;
   padding: 2rem;
   font-family: monospace;
   font-size: 2rem;
+  width: 3.325em;
   color: rgba(255, 255, 255, 0.5);
   -webkit-transition: color linear 0.2s;
   -moz-transition: color linear 0.2s;
-  transition: color linear 0.2s; }
+  transition: color linear 0.2s;
+  background-color: transparent;
+  border: none; }
   .video__btn:hover {
     color: white;
-    -webkit-transition: color ease-in 0.5s;
-    -moz-transition: color ease-in 0.5s;
-    transition: color ease-in 0.5s;
     cursor: pointer; }
-  .video__btn.video__play {
-    position: fixed;
-    top: 0;
-    right: 0; }
-  .video__btn.video__pause {
-    position: fixed;
-    top: 2rem;
-    right: 0; }
+  .video__btn:focus {
+    outline: none; }
+  .video__btn.hidden {
+    color: rgba(255, 255, 255, 0);
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%); }
 
-@media screen and (max-device-width: 800px) {
+@media screen and (max-width: 800px) {
   .overlay, #overlay {
     background: url(../img/wave-god.jpg) #000 no-repeat 25% center fixed;
     background-size: cover; }
@@ -522,17 +521,30 @@ p {
       left: 0;
       background-color: rgba(0, 0, 0, 0.4);
       z-index: -1; }
-  #video--bg {
+  #video--bg, .video__btn {
     display: none; } }
 
 .btn {
-  outline: 1px solid white;
-  color: white;
-  font-size: 1em;
-  padding: 0.4em 1em;
-  text-decoration: none;
   display: inline-block;
-  margin: 1rem; }
+  margin: 1rem;
+  padding: 0.4em 1em;
+  font-size: 1em;
+  color: white;
+  text-decoration: none;
+  background-color: transparent;
+  border: 1px solid white;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  transition: all 0.2s linear; }
   .btn:hover {
     background-color: white;
     color: black; }
+
+video {
+  transition: 1s opacity; }
+
+.stopfade {
+  opacity: .5; }
+
+.btn:focus {
+  outline: none; }

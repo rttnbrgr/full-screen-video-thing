@@ -1,37 +1,23 @@
+// Tools [ Normalize & Bourbon ]
 @import '0-normalize';
 @import 'bourbon/bourbon';
-
-// FONT VIA GOOGLE FONTS
-@import url(https://fonts.googleapis.com/css?family=Inconsolata:400,700);
-@import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900);
-
-$link: white;
-$dark: black;
-
 // Base & Typography
-@import '1-typography';
+@import '1-base';
 // Hero
 @import '2-hero';
 // Video
 @import '2-video';
+// Button
+@import '2-btn';
 
 
+video {
+    transition: 1s opacity;
+}
+.stopfade { 
+	opacity: .5; 
+}
 
-
-.btn {
-    
-    outline: 1px solid $link;
-    color: $link;
-    font-size: 1em;
-    padding: 0.4em 1em;
-    text-decoration: none;
-    // text-transform: uppercase;
-    display: inline-block;
-    margin: 1rem;
-
-    &:hover {
-        background-color: $link;
-        color: $dark;
-    }
-
+.btn:focus {
+	outline: none;
 }

@@ -2,3 +2,6 @@
 [youtube](http://www.youtube.com/watch?v=ITZNHsad2fE)
 
 http://thenewcode.com/777/Create-Fullscreen-HTML5-Page-Background-Video
+http://stackoverflow.com/questions/22885702/html-for-the-pause-symbol-in-a-video-control#22885848
+http://stackoverflow.com/questions/20301235/how-to-toggle-class-using-pure-javascript-in-html
+https://www.freegameplanet.com/science-kombat-browser-game

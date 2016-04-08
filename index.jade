@@ -15,47 +15,75 @@ body
   
   .hero-wrapper
     section.hero
-      h1 Wave Gawd Deu
+      h1 Wave Gawd Deux
       p YOLO hashtag pug, tofu mlkshk meh gochujang godard tumblr helvetica. Art party gastropub +1 lo-fi, roof party marfa artisan. Intelligentsia 90's organic, roof party marfa asymmetrical fanny pack everyday carry sustainable tacos cray.
       nav
         a.btn(href="https://www.youtube.com/watch?v=ITZNHsad2fE" target="_blank") Watch
         a.btn(href="https://soundcloud.com/krooks-x-up/sets/stanley-vaughn-the-rarity" target="_blank") Listen
+        //- button#vidpause.btn Pause
 
   .overlay
 
+  //- video#video--bg(muted autoplay loop poster="assets/img/wave-god.jpg")
   video#video--bg(muted autoplay loop poster="assets/img/wave-god.jpg")
     source(src="assets/video/wavy-web.webm" type="video/webm")
     source(src="assets/video/wavy-web.mp4" type="video/mp4")
-  span.video__pause.video__btn#pause &#9612;&#9612;
-  span.video__play.video__btn#play &#9658;
+  //- span.video__pause.video__btn#pause &#9612;&#9612;
+  //- span.video__play.video__btn.hidden#play &#9658;
+
+  button.video__btn &#9612;&#9612;
+
 
 script(type="text/javascript").
   var vid = document.getElementById("video--bg");
-  var pause = document.getElementById('pause');  
-  var play = document.getElementById('play');
-  //- function vidFade() {
-  //-     vid.classList.add("stopfade");
-  //- }
-  //- vid.addEventListener('ended', function() {
-  //-     // only functional if "loop" is removed 
-  //-      vid.pause();
-  //-   // to capture IE10
-  //-   vidFade();
-  //- });
-  pause.addEventListener('click', function() {
-    vid.loop = false;
-    vid.pause();
+  //- var pause = document.getElementById('pause');  
+  var play = document.getElementById('play');  
+  var playString = "&#9658";
+  var pauseString = "&#9612;&#9612";
+  
+
+  // tut js
+  var videoBtn = document.getElementsByClassName("video__btn")[0];
+  
+  videoBtn.addEventListener("click", function() {
+    if (vid.paused) {      
+      vid.play();
+      this.innerHTML = pauseString;
+    } else {
+      vid.pause();
+      this.innerHTML = playString;
+    }
   });
+
+  
+
+
+
+
+
+  /*
+  
+  // pause event
+  pause.addEventListener('click', function() {
+    // turn off loop
+    vid.loop = false;
+    // pause video
+    vid.pause();
+    // show play btn
+    play.classList.toggle('hidden');
+    // hide pause btn
+    this.classList.toggle('hidden');
+
+  })
+  
   play.addEventListener('click', function() {
     vid.play();
     vid.loop = true;
-  })
-  //- pauseButton.addEventListener("click", function() {
-  //-     vid.classList.toggle("stopfade");
-  //-   if (vid.paused) {
-  //- vid.play();
-  //-     pauseButton.innerHTML = "Pause";
-  //-   } else {
-  //-         vid.pause();
-  //-         pauseButton.innerHTML = "Paused";
-  //-   }
+    this.classList.toggle('hidden');
+    pause.classList.toggle('hidden');
+  });
+
+  */
+
+  
+  

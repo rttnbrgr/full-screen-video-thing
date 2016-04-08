@@ -31,7 +31,7 @@
 
 .overlay,
 #overlay {
-    background: url(images/pattern.png);
+    // background: url(images/pattern.png);
     background-repeat: repeat;
     position: fixed;
     top: 0;
@@ -65,30 +65,41 @@
   }
 }
 
+
 .video__btn {
   @include position(fixed, 0 0 null null);
+  display: block;
   padding: 2rem;
   font-family: monospace;
   font-size: 2rem;
+  width: 3.325em;
   color: rgba(255,255,255, 0.5);
   @include transition(color linear 0.2s);
+  background-color: transparent;
+  border: none;
   
   &:hover {
     color: rgba(255,255,255,1);
-    @include transition(color ease-in 0.5s);
     cursor: pointer;
   }
 
-  &.video__play {
-    @include position(fixed, 0 0 null null);
+  &:focus {
+    outline: none;
   }
-  &.video__pause {
-    @include position(fixed, 2rem 0 null null);
+
+  &.hidden {
+    color: rgba(255,255,255,0);
+    @include transform(translateX(100%));
+    // @include transition(color 3s, translateX linear 3s);
+    // @include transition(color linear 3s);
   }
+
 }
 
 
-@media screen and (max-device-width: 800px) {
+
+// @media screen and (max-device-width: 800px) {
+@media screen and (max-width: 800px) {
   .overlay, #overlay {
     background: url(../img/wave-god.jpg) #000 no-repeat 25% center fixed;
     background-size: cover;
@@ -101,7 +112,7 @@
     }
   }
   
-  #video--bg {
+  #video--bg, .video__btn {
       display: none;
   }
 }

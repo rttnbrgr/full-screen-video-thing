@@ -29,8 +29,7 @@
   new STUFF
 */
 
-.overlay,
-#overlay {
+.overlay {
     // background: url(images/pattern.png);
     background-repeat: repeat;
     position: fixed;
@@ -55,8 +54,7 @@
   @include transform(translateX(-50%) translateY(-50%) );
   background: url('../img/wave-god.jpg') center center no-repeat;
   background-size: cover;
-
-  color: pink;
+  @include transition(opacity 1s);
 
   &::after {
     content: "";

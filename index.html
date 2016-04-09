@@ -25,14 +25,9 @@
 </body>
 <script type="text/javascript">
   var vid = document.getElementById("video--bg");
-  //- var pause = document.getElementById('pause');  
-  var play = document.getElementById('play');  
+  var videoBtn = document.getElementsByClassName("video__btn")[0];
   var playString = "&#9658";
   var pauseString = "&#9612;&#9612";
-  
-  
-  // tut js
-  var videoBtn = document.getElementsByClassName("video__btn")[0];
   
   videoBtn.addEventListener("click", function() {
     if (vid.paused) {      
@@ -42,35 +37,5 @@
       vid.pause();
       this.innerHTML = playString;
     }
-  });
-  
-  
-  
-  
-  
-  
-  
-  /*
-  
-  // pause event
-  pause.addEventListener('click', function() {
-    // turn off loop
-    vid.loop = false;
-    // pause video
-    vid.pause();
-    // show play btn
-    play.classList.toggle('hidden');
-    // hide pause btn
-    this.classList.toggle('hidden');
-  
-  })
-  
-  play.addEventListener('click', function() {
-    vid.play();
-    vid.loop = true;
-    this.classList.toggle('hidden');
-    pause.classList.toggle('hidden');
-  });
-  
-  */
+  });  
 </script>

@@ -24,26 +24,18 @@ body
 
   .overlay
 
-  //- video#video--bg(muted autoplay loop poster="assets/img/wave-god.jpg")
   video#video--bg(muted autoplay loop poster="assets/img/wave-god.jpg")
     source(src="assets/video/wavy-web.webm" type="video/webm")
     source(src="assets/video/wavy-web.mp4" type="video/mp4")
-  //- span.video__pause.video__btn#pause &#9612;&#9612;
-  //- span.video__play.video__btn.hidden#play &#9658;
-
+  
   button.video__btn &#9612;&#9612;
 
 
 script(type="text/javascript").
   var vid = document.getElementById("video--bg");
-  //- var pause = document.getElementById('pause');  
-  var play = document.getElementById('play');  
+  var videoBtn = document.getElementsByClassName("video__btn")[0];
   var playString = "&#9658";
   var pauseString = "&#9612;&#9612";
-  
-
-  // tut js
-  var videoBtn = document.getElementsByClassName("video__btn")[0];
   
   videoBtn.addEventListener("click", function() {
     if (vid.paused) {      
@@ -53,37 +45,4 @@ script(type="text/javascript").
       vid.pause();
       this.innerHTML = playString;
     }
-  });
-
-  
-
-
-
-
-
-  /*
-  
-  // pause event
-  pause.addEventListener('click', function() {
-    // turn off loop
-    vid.loop = false;
-    // pause video
-    vid.pause();
-    // show play btn
-    play.classList.toggle('hidden');
-    // hide pause btn
-    this.classList.toggle('hidden');
-
-  })
-  
-  play.addEventListener('click', function() {
-    vid.play();
-    vid.loop = true;
-    this.classList.toggle('hidden');
-    pause.classList.toggle('hidden');
-  });
-
-  */
-
-  
-  
+  });  

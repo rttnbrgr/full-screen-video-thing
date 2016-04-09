@@ -436,8 +436,7 @@ p {
 /*
   new STUFF
 */
-.overlay,
-#overlay {
+.overlay {
   background-repeat: repeat;
   position: fixed;
   top: 0;
@@ -470,7 +469,9 @@ p {
   transform: translateX(-50%) translateY(-50%);
   background: url("../img/wave-god.jpg") center center no-repeat;
   background-size: cover;
-  color: pink; }
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  transition: opacity 1s; }
   #video--bg::after {
     content: "";
     position: fixed;
@@ -539,12 +540,5 @@ p {
   .btn:hover {
     background-color: white;
     color: black; }
-
-video {
-  transition: 1s opacity; }
-
-.stopfade {
-  opacity: .5; }
-
-.btn:focus {
-  outline: none; }
+  .btn:focus {
+    outline: none; }

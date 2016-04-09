@@ -9,15 +9,3 @@
 @import '2-video';
 // Button
 @import '2-btn';
-
-
-video {
-    transition: 1s opacity;
-}
-.stopfade { 
-	opacity: .5; 
-}
-
-.btn:focus {
-	outline: none;
-}

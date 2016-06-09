@@ -21,12 +21,12 @@ gulp.task('styles', function() {
 });
  
 // gulp.task('build', st)
-
 gulp.task('default', ['styles'], function() {
   gulp.watch('assets/css/**/*.scss', ['styles']);
 })
 
 
+// browswer sync
 gulp.task('browser-sync', function() {
   browserSync.init({
       server: {
@@ -34,7 +34,6 @@ gulp.task('browser-sync', function() {
       }
   });
 });
-
 
 // Static Server + watching scss/html files
 gulp.task('serve', ['sass'], function() {
@@ -59,8 +58,6 @@ gulp.task('sass', function() {
         .pipe(browserSync.stream());
 });
 
-
-
 // Compile and copy Jade
 gulp.task('jade', function(event) {
   return gulp.src(sources.jade)
@@ -68,9 +65,7 @@ gulp.task('jade', function(event) {
     .pipe(gulp.dest(destination.public))
 });
 
-
 gulp.task('thing', ['serve', 'jade']);
-
 
 // Surge Deploy Task
 gulp.task('deploy', [], function () {

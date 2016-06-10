@@ -3,8 +3,8 @@
  * 1. Change the default font family in all browsers (opinionated).
  * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
  */
-@import url(https://fonts.googleapis.com/css?family=Inconsolata:400,700);
-@import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900);
+@import url(https://fonts.googleapis.com/css?family=Inconsolata:400);
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:900);
 html {
   font-family: sans-serif;
   /* 1 */
@@ -372,34 +372,47 @@ html {
 body {
   margin: 0;
   padding: 0;
+  font-size: 100%;
   font-family: 'Inconsolata', monospace;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased !important;
   font-smooth: always;
-  color: white; }
+  color: white;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+  @media screen and (min-width: 800px) {
+    body {
+      font-size: 2rem; } }
 
 h1 {
-  display: inline-block;
   margin: 0 auto;
-  padding: 0.25rem 2rem;
   padding: 0.25rem 0;
-  font-size: 3em;
+  font-size: 3rem;
   line-height: 1;
   font-family: 'Playfair Display', serif;
   font-weight: 900;
-  text-transform: none;
   color: white;
-  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4); }
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
 
 p {
   margin: 1rem auto;
-  padding: 1rem 2rem;
   padding: 1rem 0;
   max-width: 40rem;
-  line-height: 1.4; }
+  line-height: 1.4;
+  font-size: 1rem;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
 
 @media screen and (min-width: 800px) {
   h1 {
-    font-size: 5em; } }
+    font-size: 5rem; }
+  p {
+    font-size: 1.4rem; } }
 
 .hero-wrapper {
   display: flex;
@@ -411,32 +424,12 @@ p {
   text-align: center;
   position: relative;
   z-index: 3;
-  padding: 0 1.5rem; }
+  font-size: 1rem;
+  padding: 0 1.5em; }
 
 /*
   OLD STUFF
 */
-#bg {
-  position: absolute;
-  position: fixed;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  z-index: -1; }
-
-#bg video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  min-width: 50%;
-  min-height: 50%;
-  filter: blur(3px);
-  -webkit-filter: blur(3px); }
-
 /*
   new STUFF
 */
@@ -454,7 +447,8 @@ p {
   bottom: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.4);
-  z-index: -1; }
+  z-index: -1;
+  z-index: 1; }
 
 #video--bg {
   display: block;
@@ -465,7 +459,7 @@ p {
   min-height: 100%;
   height: auto;
   width: auto;
-  z-index: -100;
+  z-index: 0;
   -webkit-transform: translateX(-50%) translateY(-50%);
   -moz-transform: translateX(-50%) translateY(-50%);
   -ms-transform: translateX(-50%) translateY(-50%);
@@ -533,10 +527,13 @@ p {
   display: inline-block;
   margin: 1rem;
   padding: 0.4em 1em;
-  font-size: 1em;
+  font-size: 1rem;
+  line-height: 1;
   color: white;
   text-decoration: none;
+  text-transform: uppercase;
   background-color: transparent;
+  min-width: 5.25em;
   border: 1px solid white;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
@@ -546,3 +543,6 @@ p {
     color: black; }
   .btn:focus {
     outline: none; }
+  @media screen and (min-width: 800px) {
+    .btn {
+      font-size: 1.4rem; } }

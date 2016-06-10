@@ -12,7 +12,5 @@ http://stackoverflow.com/questions/20301235/how-to-toggle-class-using-pure-javas
 https://www.designernews.co/stories/19508-fullscreen-background-html5-video-best-practices
 https://www.typewolf.com/site-of-the-day/fonts/playfair-display
 
-
-
 https://www.freegameplanet.com/science-kombat-browser-game
 http://olivierlacan.com/posts/launch-sublime-text-3-from-the-command-line/

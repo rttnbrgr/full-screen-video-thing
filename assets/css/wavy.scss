@@ -3,9 +3,8 @@
 @import 'bourbon/bourbon';
 // Base & Typography
 @import '1-base';
-// Hero
+// Modules [ Hero, Overlay, Video, Button ]
 @import '2-hero';
-// Video
+@import '2-overlay';
 @import '2-video';
-// Button
 @import '2-btn';

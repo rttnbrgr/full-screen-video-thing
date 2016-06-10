@@ -2,3 +2,6 @@ css/*.scss
 css/bourbon
 .sass-cache
 *.jade
+package.json
+gulpfile.js
+*.md

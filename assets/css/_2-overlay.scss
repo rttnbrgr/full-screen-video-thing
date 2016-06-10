@@ -1,0 +1,20 @@
+.overlay {
+	@include position(fixed, 0);
+	@include size(100% 100vh);
+	
+	// Cover for mobile w/ no video
+	background: url(../img/wave-god.jpg) transparent no-repeat 25% center fixed;
+	background-size: cover;
+	
+	&::after {
+		content: "";
+		@include position(fixed, 0);
+		background-color: rgba(0,0,0, 0.4);
+	}
+	
+	// Remove the static image
+	@media screen and (min-width: $bp) {
+		background-image: none;
+		background-color: transparent;
+	}
+}

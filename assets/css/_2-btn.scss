@@ -1,27 +1,26 @@
 .btn {
-    
-  display: inline-block;
-  margin: 1rem;
-  padding: 0.4em 1em;
-  font-size: $fz-mobile;
-  line-height: 1;
-  color: $link;
-  text-decoration: none;
-  text-transform: uppercase;
-  background-color: transparent;
-  min-width: 5.25em;
-  border: 1px solid $link;
-  @include transition(all .2s linear);
+		
+	display: inline-block;
+	margin: 1rem;
+	padding: 0.4em 1em;
+	font-size: $fz-mobile;
+	line-height: 1;
+	color: $link;
+	text-decoration: none;
+	text-transform: uppercase;
+	background-color: transparent;
+	min-width: 5.25em;
+	border: 1px solid $link;
+	@include transition(all .2s linear);
 
-  &:hover {
-    background-color: $link;
-    color: $dark;
-  }
+	&:hover {
+		background-color: $link;
+		color: $dark;
+	}
 
-  &:focus { outline: none; }
+	&:focus { outline: none; }
 
-  @media screen and (min-width: 800px) {
-    font-size: $fz-desktop;
-  }
-
+	@media screen and (min-width: 800px) {
+		font-size: $fz-desktop;
+	}
 }

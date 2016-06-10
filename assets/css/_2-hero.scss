@@ -1,15 +1,16 @@
 .hero-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100vh;
+	@include display(flex);
+	position: relative;
+	flex-direction: column;
+	justify-content: center;
+	height: 100vh;
 }
 
 .hero {
-  text-align: center;
-  position: relative;
-  z-index: 3;
-  font-size: 1rem;
-  padding: 0 1.5em;  
+	text-align: center;
+	position: relative;
+	z-index: 3;
+	font-size: 1rem;
+	padding: 0 1.25rem;  
 }
 

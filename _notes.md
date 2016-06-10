@@ -14,3 +14,5 @@ https://www.typewolf.com/site-of-the-day/fonts/playfair-display
 
 https://www.freegameplanet.com/science-kombat-browser-game
 http://olivierlacan.com/posts/launch-sublime-text-3-from-the-command-line/
+
+http://nicolasgallagher.com/multiple-backgrounds-and-borders-with-css2/

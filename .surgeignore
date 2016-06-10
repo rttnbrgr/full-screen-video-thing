@@ -1,6 +1,5 @@
-css/*.scss
-css/bourbon
-.sass-cache
+assets/css/**/*.scss
+assets/css/.sass-cache
 *.jade
 package.json
 gulpfile.js

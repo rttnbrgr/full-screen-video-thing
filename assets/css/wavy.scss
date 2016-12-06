@@ -1,5 +1,6 @@
 // Tools [ Normalize & Bourbon ]
 @import '0-normalize';
+@import '0-comrade';
 @import 'bourbon/bourbon';
 // Base & Typography
 @import '1-base';
@@ -8,3 +9,34 @@
 @import '2-overlay';
 @import '2-video';
 @import '2-btn';
+
+.bg {
+	&-w { background-color: #fff; }
+	&-b { background-color: #000; }
+	&-g { background-color: #ccc; }
+}
+
+.video {
+	
+	&__curtain {
+		background-color: pink;
+		z-index: 3;
+		position: absolute;
+		transform: translate3d(0, 50%, 0);
+		transition: all .3s linear;
+	}
+
+	&__wrapper {
+		padding-bottom: 56.25%;
+		height: 0;
+		position: relative;
+
+		max-width: 1280px;
+		width: 90%;
+
+	}
+}
+
+.isVisible {
+	transform: translate3d(0, 0, 0);
+}

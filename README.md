@@ -1,4 +1,4 @@
-# Canteloupe
+# Clementine
 
 A sample full-screen video background for [Tasteclub Labs.][tc]
 

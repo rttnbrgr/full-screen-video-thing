@@ -1115,7 +1115,7 @@ p {
   background-color: pink;
   z-index: 3;
   position: absolute;
-  transform: translate3d(0, 50%, 0);
+  transform: translate3d(0, -95%, 0);
   transition: all .3s linear; }
 
 .video__wrapper {

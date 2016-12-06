@@ -12,7 +12,7 @@
       <section class="hero">
         <h1>Fullscreen Video Background</h1>
         <p>YOLO hashtag pug, tofu mlkshk meh gochujang godard tumblr helvetica. Art party gastropub +1 lo-fi, roof party marfa artisan. Intelligentsia 90's organic, roof party marfa asymmetrical fanny pack everyday carry sustainable tacos cray.</p>
-        <nav><a href="https://www.youtube.com/watch?v=ITZNHsad2fE" target="_blank" class="btn">Watch</a><a href="https://soundcloud.com/krooks-x-up/sets/stanley-vaughn-the-rarity" target="_blank" class="btn">Listen</a></nav>
+        <nav><a href="https://www.youtube.com/watch?v=ITZNHsad2fE" target="_blank" class="btn">Watch</a><a href="https://soundcloud.com/krooks-x-up/sets/stanley-vaughn-the-rarity" target="_blank" class="btn">Listen</a><a href="#" class="btn btn--youtube">Test</a></nav>
       </section>
     </div>
     <div class="overlay"></div>
@@ -25,13 +25,15 @@
       <div class="video__wrapper vw">
         <iframe width="1280" height="720" src="https://www.youtube-nocookie.com/embed/ITZNHsad2fE" frameborder="0" allowfullscreen class="fullbleed w100 h100"></iframe>
       </div>
+      <button class="youtubeClose top right absolute mr-1 mt-1">X</button>
     </div>
   </body>
   <script type="text/javascript">
-    var vid = document.getElementById("video--bg");
-    var videoBtn = document.getElementsByClassName("video__btn")[0];
-    var playString = "&#9658";
-    var pauseString = "&#9612;&#9612";
+    var vid, videoBtn, playString, pauseString;
+    vid = document.getElementById("video--bg");
+    videoBtn = document.getElementsByClassName("video__btn")[0];
+    playString = "&#9658";
+    pauseString = "&#9612;&#9612";
     
     videoBtn.addEventListener("click", function() {
       if (vid.paused) {      
@@ -43,7 +45,24 @@
       }
     });
     
-    var curtain, target, videoIframe;
+    var curtain, target, videoIframe, youtubeBtn, isVisible;
     curtain = document.getElementById('videoCurtain');
+    youtubeBtn = document.getElementsByClassName('btn--youtube')[0];
+    curtainClose = document.getElementsByClassName('youtubeClose')[0];
+    
+    function toggleVideoCurtain() {
+      var isVisible = curtain.classList.contains('isVisible');      
+      isVisible ? curtain.classList.remove('isVisible') : curtain.classList.add('isVisible');
+    }
+    
+    youtubeBtn.addEventListener('click', function(e) {
+      console.log('youtube trigger');
+      toggleVideoCurtain();
+    });
+    
+    curtainClose.addEventListener('click', function(e) {
+      console.log('youtube close');
+      toggleVideoCurtain();
+    });
   </script>
 </html>

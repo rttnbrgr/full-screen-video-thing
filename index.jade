@@ -20,6 +20,7 @@ html(lang="en")
         nav
           a.btn(href="https://www.youtube.com/watch?v=ITZNHsad2fE" target="_blank") Watch
           a.btn(href="https://soundcloud.com/krooks-x-up/sets/stanley-vaughn-the-rarity" target="_blank") Listen
+          a.btn.btn--youtube(href='#') Test
 
     .overlay
 
@@ -32,12 +33,14 @@ html(lang="en")
     #videoCurtain.video__curtain.fullbleed.bg-g.flex.f-middle.f-center.bg-w
       .video__wrapper.vw
         iframe(width="1280" height="720" src="https://www.youtube-nocookie.com/embed/ITZNHsad2fE" frameborder="0" allowfullscreen).fullbleed.w100.h100
+      button.youtubeClose.top.right.absolute.mr-1.mt-1 X
 
   script(type="text/javascript").
-    var vid = document.getElementById("video--bg");
-    var videoBtn = document.getElementsByClassName("video__btn")[0];
-    var playString = "&#9658";
-    var pauseString = "&#9612;&#9612";
+    var vid, videoBtn, playString, pauseString;
+    vid = document.getElementById("video--bg");
+    videoBtn = document.getElementsByClassName("video__btn")[0];
+    playString = "&#9658";
+    pauseString = "&#9612;&#9612";
     
     videoBtn.addEventListener("click", function() {
       if (vid.paused) {      
@@ -49,5 +52,24 @@ html(lang="en")
       }
     });
 
-    var curtain, target, videoIframe;
+    var curtain, target, videoIframe, youtubeBtn, isVisible;
     curtain = document.getElementById('videoCurtain');
+    youtubeBtn = document.getElementsByClassName('btn--youtube')[0];
+    curtainClose = document.getElementsByClassName('youtubeClose')[0];
+
+    function toggleVideoCurtain() {
+      var isVisible = curtain.classList.contains('isVisible');      
+      isVisible ? curtain.classList.remove('isVisible') : curtain.classList.add('isVisible');
+    }
+
+    youtubeBtn.addEventListener('click', function(e) {
+      console.log('youtube trigger');
+      toggleVideoCurtain();
+    });
+
+    curtainClose.addEventListener('click', function(e) {
+      console.log('youtube close');
+      toggleVideoCurtain();
+    });
+
+

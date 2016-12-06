@@ -29,6 +29,10 @@ html(lang="en")
     
     button.video__btn &#9612;&#9612;
 
+    #videoCurtain.video__curtain.fullbleed.bg-g.flex.f-middle.f-center.bg-w
+      .video__wrapper.vw
+        iframe(width="1280" height="720" src="https://www.youtube-nocookie.com/embed/ITZNHsad2fE" frameborder="0" allowfullscreen).fullbleed.w100.h100
+
   script(type="text/javascript").
     var vid = document.getElementById("video--bg");
     var videoBtn = document.getElementsByClassName("video__btn")[0];
@@ -43,4 +47,7 @@ html(lang="en")
         vid.pause();
         this.innerHTML = playString;
       }
-    });  
+    });
+
+    var curtain, target, videoIframe;
+    curtain = document.getElementById('videoCurtain');

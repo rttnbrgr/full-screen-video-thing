@@ -21,6 +21,11 @@
       <source src="assets/video/wavy-web.mp4" type="video/mp4">
     </video>
     <button class="video__btn">&#9612;&#9612;</button>
+    <div id="videoCurtain" class="video__curtain fullbleed bg-g flex f-middle f-center bg-w">
+      <div class="video__wrapper vw">
+        <iframe width="1280" height="720" src="https://www.youtube-nocookie.com/embed/ITZNHsad2fE" frameborder="0" allowfullscreen class="fullbleed w100 h100"></iframe>
+      </div>
+    </div>
   </body>
   <script type="text/javascript">
     var vid = document.getElementById("video--bg");
@@ -36,6 +41,9 @@
         vid.pause();
         this.innerHTML = playString;
       }
-    });  
+    });
+    
+    var curtain, target, videoIframe;
+    curtain = document.getElementById('videoCurtain');
   </script>
 </html>

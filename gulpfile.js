@@ -6,7 +6,7 @@ var surge = require('gulp-surge')
 
 
 var sources = {
-	jade: './*.jade'
+	jade: './**/*.jade'
 }
 
 var destination = {

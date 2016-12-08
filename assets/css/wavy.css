@@ -1053,6 +1053,7 @@ p {
   background: url("../img/wave-god.jpg") center center no-repeat;
   background-size: cover; }
 
+.btn--dismiss,
 .video__btn {
   display: none;
   position: fixed;
@@ -1068,15 +1069,54 @@ p {
   transition: color linear 0.2s;
   background-color: transparent;
   border: none; }
+  .btn--dismiss:hover,
   .video__btn:hover {
     color: white;
     cursor: pointer; }
+  .btn--dismiss:focus,
   .video__btn:focus {
     outline: none; }
 
 @media screen and (min-width: 50rem) {
   #video--bg, .video__btn {
     display: block; } }
+
+.bg-w {
+  background-color: #fff; }
+
+.bg-b {
+  background-color: #000; }
+
+.bg-g {
+  background-color: #ccc; }
+
+.video__curtain {
+  background-color: pink;
+  z-index: 3;
+  position: absolute;
+  transform: translate3d(0, -100%, 0);
+  transition: all .3s linear; }
+
+.video__wrapper {
+  padding-bottom: 56.25%;
+  height: 0;
+  position: relative;
+  max-width: 1280px;
+  width: 90%; }
+
+.isVisible {
+  transform: translate3d(0, 0, 0); }
+
+.btn--dismiss {
+  background-color: transparent;
+  border: none; }
+  .btn--dismiss:hover {
+    cursor: pointer; }
+  .btn--dismiss:focus {
+    outline: none; }
+
+.btn--dismiss {
+  display: block; }
 
 .btn {
   display: inline-block;
@@ -1102,28 +1142,18 @@ p {
     .btn {
       font-size: 1.4rem; } }
 
-.bg-w {
-  background-color: #fff; }
-
-.bg-b {
-  background-color: #000; }
-
-.bg-g {
-  background-color: #ccc; }
-
-.video__curtain {
-  background-color: pink;
-  z-index: 3;
-  position: absolute;
-  transform: translate3d(0, -95%, 0);
-  transition: all .3s linear; }
-
-.video__wrapper {
-  padding-bottom: 56.25%;
-  height: 0;
-  position: relative;
-  max-width: 1280px;
-  width: 90%; }
-
-.isVisible {
-  transform: translate3d(0, 0, 0); }
+.btn--dismiss {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 3.325em;
+  padding: 2rem;
+  font-family: monospace;
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.5);
+  -webkit-transition: color linear 0.2s;
+  -moz-transition: color linear 0.2s;
+  transition: color linear 0.2s; }
+  .btn--dismiss:hover {
+    color: white;
+    background-color: green; }

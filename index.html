@@ -9,60 +9,66 @@
   </head>
   <body>
     <div class="hero-wrapper">
+      <video id="video--bg" muted autoplay loop poster="assets/img/wave-god.jpg">
+        <source src="assets/video/wavy-web.webm" type="video/webm">
+        <source src="assets/video/wavy-web.mp4" type="video/mp4">
+      </video>
+      <div class="overlay"></div>
+      <button class="video__btn btn--dismiss">&#9612;&#9612;</button>
       <section class="hero">
         <h1>Fullscreen Video Background</h1>
         <p>YOLO hashtag pug, tofu mlkshk meh gochujang godard tumblr helvetica. Art party gastropub +1 lo-fi, roof party marfa artisan. Intelligentsia 90's organic, roof party marfa asymmetrical fanny pack everyday carry sustainable tacos cray.</p>
-        <nav><a href="https://www.youtube.com/watch?v=ITZNHsad2fE" target="_blank" class="btn">Watch</a><a href="https://soundcloud.com/krooks-x-up/sets/stanley-vaughn-the-rarity" target="_blank" class="btn">Listen</a><a href="#" class="btn btn--youtube">Test</a></nav>
+        <nav><a href="#" class="btn btn--youtube">Test</a>
+        </nav>
       </section>
     </div>
-    <div class="overlay"></div>
-    <video id="video--bg" muted autoplay loop poster="assets/img/wave-god.jpg">
-      <source src="assets/video/wavy-web.webm" type="video/webm">
-      <source src="assets/video/wavy-web.mp4" type="video/mp4">
-    </video>
-    <button class="video__btn">&#9612;&#9612;</button>
-    <div id="videoCurtain" class="video__curtain fullbleed bg-g flex f-middle f-center bg-w">
+    <script type="text/javascript">
+      var vid, videoBtn, playString, pauseString;
+      vid = document.getElementById("video--bg");
+      videoBtn = document.getElementsByClassName("video__btn")[0];
+      playString = "&#9658";
+      pauseString = "&#9612;&#9612";
+      
+      videoBtn.addEventListener("click", function() {
+        if (vid.paused) {      
+          vid.play();
+          this.innerHTML = pauseString;
+        } else {
+          vid.pause();
+          this.innerHTML = playString;
+        }
+      });      
+    </script>
+    <div id="videoCurtain" class="video__curtain fullbleed bg-b flex f-middle f-center">
+      <section class="hero">
+        <h1>Youtube Embed</h1>
+        <p>YOLO hashtag pug, tofu mlkshk meh gochujang godard tumblr helvetica. Art party gastropub +1 lo-fi</p>
+      </section>
       <div class="video__wrapper vw">
         <iframe width="1280" height="720" src="https://www.youtube-nocookie.com/embed/ITZNHsad2fE" frameborder="0" allowfullscreen class="fullbleed w100 h100"></iframe>
       </div>
-      <button class="youtubeClose top right absolute mr-1 mt-1">X</button>
+      <button class="youtubeClose btn--dismiss top right absolute">&#9747;</button>
     </div>
-  </body>
-  <script type="text/javascript">
-    var vid, videoBtn, playString, pauseString;
-    vid = document.getElementById("video--bg");
-    videoBtn = document.getElementsByClassName("video__btn")[0];
-    playString = "&#9658";
-    pauseString = "&#9612;&#9612";
-    
-    videoBtn.addEventListener("click", function() {
-      if (vid.paused) {      
-        vid.play();
-        this.innerHTML = pauseString;
-      } else {
-        vid.pause();
-        this.innerHTML = playString;
+    <script type="text/javascript">
+      var curtain, target, videoIframe, youtubeBtn, isVisible;
+      curtain = document.getElementById('videoCurtain');
+      youtubeBtn = document.getElementsByClassName('btn--youtube')[0];
+      curtainClose = document.getElementsByClassName('youtubeClose')[0];
+      
+      function toggleVideoCurtain() {
+        var isVisible = curtain.classList.contains('isVisible');      
+        isVisible ? curtain.classList.remove('isVisible') : curtain.classList.add('isVisible');
       }
-    });
-    
-    var curtain, target, videoIframe, youtubeBtn, isVisible;
-    curtain = document.getElementById('videoCurtain');
-    youtubeBtn = document.getElementsByClassName('btn--youtube')[0];
-    curtainClose = document.getElementsByClassName('youtubeClose')[0];
-    
-    function toggleVideoCurtain() {
-      var isVisible = curtain.classList.contains('isVisible');      
-      isVisible ? curtain.classList.remove('isVisible') : curtain.classList.add('isVisible');
-    }
-    
-    youtubeBtn.addEventListener('click', function(e) {
-      console.log('youtube trigger');
-      toggleVideoCurtain();
-    });
-    
-    curtainClose.addEventListener('click', function(e) {
-      console.log('youtube close');
-      toggleVideoCurtain();
-    });
-  </script>
+      
+      youtubeBtn.addEventListener('click', function(e) {
+        console.log('youtube trigger');
+        toggleVideoCurtain();
+      });
+      
+      curtainClose.addEventListener('click', function(e) {
+        console.log('youtube close');
+        toggleVideoCurtain();
+      });
+    </script>
+  </body>
 </html>

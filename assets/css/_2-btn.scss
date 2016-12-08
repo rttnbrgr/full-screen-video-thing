@@ -24,3 +24,20 @@
 		font-size: $fz-desktop;
 	}
 }
+
+.btn--dismiss {
+	@extend %buttonReset;
+	@include position(fixed, 0 0 null null);
+	width: 3.325em;
+	padding: 2rem;
+	font-family: monospace;
+	font-size: 2rem;
+	color: rgba(255,255,255, 0.5);
+	@include transition(color linear 0.2s);
+
+	&:hover {
+		color: rgba(255,255,255,1);
+		background-color: green;		
+	}
+
+}

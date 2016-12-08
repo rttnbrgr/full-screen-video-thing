@@ -1,5 +1,16 @@
-.btn {
-		
+%buttonReset {
+	background-color: transparent;
+	border: none;
+	&:hover { cursor: pointer; }
+	&:focus { outline: none; }
+}
+
+.btn--dismiss {
+	@extend %buttonReset;
+	display: block;
+}
+
+.btn {		
 	display: inline-block;
 	margin: 1rem;
 	padding: 0.4em 1em;
@@ -39,5 +50,4 @@
 		color: rgba(255,255,255,1);
 		background-color: green;		
 	}
-
 }

@@ -16,24 +16,55 @@
 	&-g { background-color: #ccc; }
 }
 
-.video {
-	
+.wrapper {
+	padding: 0 1em;
+	margin: 0 auto;
+	max-width: 1280px;
+	max-width: 640px;
+	width: 90%;
+}
+
+
+.yt {
 	&__curtain {
-		background-color: pink;
+		@include position(absolute, 0);
+		@include size(100vw 100vh);
 		z-index: 3;
 		position: absolute;
 		transform: translate3d(0, -100%, 0);
 		transition: all .3s linear;
 	}
 
-	&__wrapper {
-		padding-bottom: 56.25%;
-		height: 0;
+	&__box {
 		position: relative;
+		padding-bottom: 56.25%;
+		padding-top: 1em;
+		height: 0;
 
-		max-width: 1280px;
-		width: 90%;
+		iframe {
+			@include position(absolute, 0);
+			@include size(100%);
+		}
+	}
 
+
+}
+
+.video {
+	
+	&__curtain {
+		z-index: 3;
+		position: absolute;
+		transform: translate3d(0, -100%, 0);
+		transition: all .3s linear;
+	}
+	
+	.yt__box,
+	&__wrapper {
+		position: relative;
+		padding-bottom: 56.25%;
+		padding-top: 1em;
+		height: 0;
 	}
 }
 
@@ -44,16 +75,6 @@
 
 
 
-%buttonReset {
-	background-color: transparent;
-	border: none;
-	&:hover { cursor: pointer; }
-	&:focus { outline: none; }
-}
-
-.btn--dismiss {
-	@extend %buttonReset;
-	display: block;
-}
-
 @import '2-btn';
+
+

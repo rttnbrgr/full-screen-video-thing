@@ -8,7 +8,7 @@
 @import '2-hero';
 @import '2-overlay';
 @import '2-video';
-@import '2-btn';
+
 
 .bg {
 	&-w { background-color: #fff; }
@@ -22,7 +22,7 @@
 		background-color: pink;
 		z-index: 3;
 		position: absolute;
-		transform: translate3d(0, -95%, 0);
+		transform: translate3d(0, -100%, 0);
 		transition: all .3s linear;
 	}
 
@@ -40,3 +40,20 @@
 .isVisible {
 	transform: translate3d(0, 0, 0);
 }
+
+
+
+
+%buttonReset {
+	background-color: transparent;
+	border: none;
+	&:hover { cursor: pointer; }
+	&:focus { outline: none; }
+}
+
+.btn--dismiss {
+	@extend %buttonReset;
+	display: block;
+}
+
+@import '2-btn';

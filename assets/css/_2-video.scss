@@ -11,6 +11,7 @@
 	background-size: cover;	
 }
 
+.btn--dismiss,
 .video__btn {
 	display: none;
 	@include position(fixed, 0 0 null null);

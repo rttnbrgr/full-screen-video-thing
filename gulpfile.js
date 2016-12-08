@@ -4,9 +4,9 @@ var browserSync = require('browser-sync').create();
 var jade = require('gulp-jade')
 var surge = require('gulp-surge')
 
-
 var sources = {
-	jade: './**/*.jade'
+	jade: './**/*.jade',
+	index: './index.jade'
 }
 
 var destination = {
@@ -25,7 +25,6 @@ gulp.task('styles', function() {
 gulp.task('default', ['styles'], function() {
 	gulp.watch('assets/css/**/*.scss', ['styles']);
 })
-
 
 // browswer sync
 gulp.task('browser-sync', function() {
@@ -61,7 +60,7 @@ gulp.task('sass', function() {
 
 // Compile and copy Jade
 gulp.task('jade', function(event) {
-	return gulp.src(sources.jade)
+	return gulp.src(sources.index)
 		.pipe(jade({pretty: true}))
 		.pipe(gulp.dest(destination.public))
 });

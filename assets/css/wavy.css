@@ -1090,19 +1090,51 @@ p {
 .bg-g {
   background-color: #ccc; }
 
-.video__curtain {
-  background-color: pink;
+.wrapper {
+  padding: 0 1em;
+  margin: 0 auto;
+  max-width: 1280px;
+  max-width: 640px;
+  width: 90%; }
+
+.yt__curtain {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
   z-index: 3;
   position: absolute;
   transform: translate3d(0, -100%, 0);
   transition: all .3s linear; }
 
-.video__wrapper {
-  padding-bottom: 56.25%;
-  height: 0;
+.yt__box {
   position: relative;
-  max-width: 1280px;
-  width: 90%; }
+  padding-bottom: 56.25%;
+  padding-top: 1em;
+  height: 0; }
+  .yt__box iframe {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%; }
+
+.video__curtain {
+  z-index: 3;
+  position: absolute;
+  transform: translate3d(0, -100%, 0);
+  transition: all .3s linear; }
+
+.video .yt__box, .video__wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 1em;
+  height: 0; }
 
 .isVisible {
   transform: translate3d(0, 0, 0); }

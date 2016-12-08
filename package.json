@@ -4,6 +4,7 @@
   "description": "Lord Knows",
   "main": "gulpfile.js",
   "dependencies": {
+    "animate.css": "^3.5.2",
     "comrade-css": "0.0.11"
   },
   "devDependencies": {

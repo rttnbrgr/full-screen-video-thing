@@ -13,63 +13,7 @@ html(lang="en")
 
   body
     
-    .hero-wrapper
-      section.hero
-        h1 Fullscreen Video Background
-        p YOLO hashtag pug, tofu mlkshk meh gochujang godard tumblr helvetica. Art party gastropub +1 lo-fi, roof party marfa artisan. Intelligentsia 90's organic, roof party marfa asymmetrical fanny pack everyday carry sustainable tacos cray.
-        nav
-          a.btn(href="https://www.youtube.com/watch?v=ITZNHsad2fE" target="_blank") Watch
-          a.btn(href="https://soundcloud.com/krooks-x-up/sets/stanley-vaughn-the-rarity" target="_blank") Listen
-          a.btn.btn--youtube(href='#') Test
-
-    .overlay
-
-    video#video--bg(muted autoplay loop poster="assets/img/wave-god.jpg")
-      source(src="assets/video/wavy-web.webm" type="video/webm")
-      source(src="assets/video/wavy-web.mp4" type="video/mp4")
-    
-    button.video__btn &#9612;&#9612;
-
-    #videoCurtain.video__curtain.fullbleed.bg-g.flex.f-middle.f-center.bg-w
-      .video__wrapper.vw
-        iframe(width="1280" height="720" src="https://www.youtube-nocookie.com/embed/ITZNHsad2fE" frameborder="0" allowfullscreen).fullbleed.w100.h100
-      button.youtubeClose.top.right.absolute.mr-1.mt-1 X
-
-  script(type="text/javascript").
-    var vid, videoBtn, playString, pauseString;
-    vid = document.getElementById("video--bg");
-    videoBtn = document.getElementsByClassName("video__btn")[0];
-    playString = "&#9658";
-    pauseString = "&#9612;&#9612";
-    
-    videoBtn.addEventListener("click", function() {
-      if (vid.paused) {      
-        vid.play();
-        this.innerHTML = pauseString;
-      } else {
-        vid.pause();
-        this.innerHTML = playString;
-      }
-    });
-
-    var curtain, target, videoIframe, youtubeBtn, isVisible;
-    curtain = document.getElementById('videoCurtain');
-    youtubeBtn = document.getElementsByClassName('btn--youtube')[0];
-    curtainClose = document.getElementsByClassName('youtubeClose')[0];
-
-    function toggleVideoCurtain() {
-      var isVisible = curtain.classList.contains('isVisible');      
-      isVisible ? curtain.classList.remove('isVisible') : curtain.classList.add('isVisible');
-    }
-
-    youtubeBtn.addEventListener('click', function(e) {
-      console.log('youtube trigger');
-      toggleVideoCurtain();
-    });
-
-    curtainClose.addEventListener('click', function(e) {
-      console.log('youtube close');
-      toggleVideoCurtain();
-    });
+    include includes/heroWrapper.jade
+    include includes/videoCurtain.jade  
 
 

@@ -1,0 +1,31 @@
+#videoCurtain.video__curtain.fullbleed.bg-b.flex.f-middle.f-center
+  
+  section.hero
+    h1 Youtube Embed
+    p YOLO hashtag pug, tofu mlkshk meh gochujang godard tumblr helvetica. Art party gastropub +1 lo-fi
+
+  .video__wrapper.vw
+    iframe(width="1280" height="720" src="https://www.youtube-nocookie.com/embed/ITZNHsad2fE" frameborder="0" allowfullscreen).fullbleed.w100.h100
+  
+  button.youtubeClose.btn--dismiss.top.right.absolute &#9747;
+
+script(type="text/javascript").
+  var curtain, target, videoIframe, youtubeBtn, isVisible;
+  curtain = document.getElementById('videoCurtain');
+  youtubeBtn = document.getElementsByClassName('btn--youtube')[0];
+  curtainClose = document.getElementsByClassName('youtubeClose')[0];
+
+  function toggleVideoCurtain() {
+    var isVisible = curtain.classList.contains('isVisible');      
+    isVisible ? curtain.classList.remove('isVisible') : curtain.classList.add('isVisible');
+  }
+
+  youtubeBtn.addEventListener('click', function(e) {
+    console.log('youtube trigger');
+    toggleVideoCurtain();
+  });
+
+  curtainClose.addEventListener('click', function(e) {
+    console.log('youtube close');
+    toggleVideoCurtain();
+  });

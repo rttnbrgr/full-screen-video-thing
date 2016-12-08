@@ -1,0 +1,33 @@
+.hero-wrapper
+  video#video--bg(muted autoplay loop poster="assets/img/wave-god.jpg")
+    source(src="assets/video/wavy-web.webm" type="video/webm")
+    source(src="assets/video/wavy-web.mp4" type="video/mp4")
+
+  .overlay
+
+  button.video__btn.btn--dismiss &#9612;&#9612;
+        
+  section.hero
+    h1 Fullscreen Video Background
+    p YOLO hashtag pug, tofu mlkshk meh gochujang godard tumblr helvetica. Art party gastropub +1 lo-fi, roof party marfa artisan. Intelligentsia 90's organic, roof party marfa asymmetrical fanny pack everyday carry sustainable tacos cray.
+    nav
+      //- a.btn(href="https://www.youtube.com/watch?v=ITZNHsad2fE" target="_blank") Watch
+      //- a.btn(href="https://soundcloud.com/krooks-x-up/sets/stanley-vaughn-the-rarity" target="_blank") Listen
+      a.btn.btn--youtube(href='#') Test
+
+script(type="text/javascript").
+  var vid, videoBtn, playString, pauseString;
+  vid = document.getElementById("video--bg");
+  videoBtn = document.getElementsByClassName("video__btn")[0];
+  playString = "&#9658";
+  pauseString = "&#9612;&#9612";
+  
+  videoBtn.addEventListener("click", function() {
+    if (vid.paused) {      
+      vid.play();
+      this.innerHTML = pauseString;
+    } else {
+      vid.pause();
+      this.innerHTML = playString;
+    }
+  });      

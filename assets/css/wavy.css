@@ -963,18 +963,24 @@ body {
     body {
       font-size: 2rem; } }
 
+h1, h2 {
+  font-family: "Playfair Display", serif; }
+
 h1 {
   margin: 0 auto;
   padding: 0.25rem 0;
   font-size: 3rem;
   line-height: 1;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-weight: 900;
   color: white;
   text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease; }
+
+h2 {
+  font-size: 1.96rem; }
 
 p {
   margin: 1rem auto;
@@ -989,6 +995,8 @@ p {
 @media screen and (min-width: 50rem) {
   h1 {
     font-size: 5rem; }
+  h2 {
+    font-size: 2.8rem; }
   p {
     font-size: 1.4rem; } }
 
@@ -1035,16 +1043,16 @@ p {
       background-image: none;
       background-color: transparent; } }
 
-#video--bg {
+.video__bg {
   display: none;
   position: fixed;
   top: 50%;
   left: 50%;
+  height: auto;
+  width: auto;
   z-index: -2;
   min-width: 100%;
   min-height: 100%;
-  height: auto;
-  width: auto;
   -webkit-transform: translateX(-50%) translateY(-50%);
   -moz-transform: translateX(-50%) translateY(-50%);
   -ms-transform: translateX(-50%) translateY(-50%);
@@ -1053,7 +1061,6 @@ p {
   background: url("../img/wave-god.jpg") center center no-repeat;
   background-size: cover; }
 
-.btn--dismiss,
 .video__btn {
   display: none;
   position: fixed;
@@ -1066,19 +1073,12 @@ p {
   color: rgba(255, 255, 255, 0.5);
   -webkit-transition: color linear 0.2s;
   -moz-transition: color linear 0.2s;
-  transition: color linear 0.2s;
-  background-color: transparent;
-  border: none; }
-  .btn--dismiss:hover,
+  transition: color linear 0.2s; }
   .video__btn:hover {
-    color: white;
-    cursor: pointer; }
-  .btn--dismiss:focus,
-  .video__btn:focus {
-    outline: none; }
+    color: white; }
 
 @media screen and (min-width: 50rem) {
-  #video--bg, .video__btn {
+  .video__bg, .video__btn {
     display: block; } }
 
 .bg-w {
@@ -1108,7 +1108,9 @@ p {
   z-index: 3;
   position: absolute;
   transform: translate3d(0, -100%, 0);
-  transition: all .3s linear; }
+  transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  color: green;
+  color: white; }
 
 .yt__box {
   position: relative;
@@ -1124,36 +1126,27 @@ p {
     height: 100%;
     width: 100%; }
 
-.video__curtain {
-  z-index: 3;
-  position: absolute;
-  transform: translate3d(0, -100%, 0);
-  transition: all .3s linear; }
-
-.video .yt__box, .video__wrapper {
-  position: relative;
-  padding-bottom: 56.25%;
-  padding-top: 1em;
-  height: 0; }
+.yt__close {
+  width: 100%;
+  font-size: 2em;
+  padding: .25em 1em; }
 
 .isVisible {
   transform: translate3d(0, 0, 0); }
 
-.btn--dismiss {
+button {
   background-color: transparent;
-  border: none; }
-  .btn--dismiss:hover {
+  border: none;
+  color: inherit; }
+  button:hover {
     cursor: pointer; }
-  .btn--dismiss:focus {
+  button:focus {
     outline: none; }
-
-.btn--dismiss {
-  display: block; }
 
 .btn {
   display: inline-block;
   margin: 1rem;
-  padding: 0.4em 1em;
+  padding: 0.4em 1em 0.5em;
   font-size: 1rem;
   line-height: 1;
   color: white;
@@ -1173,19 +1166,3 @@ p {
   @media screen and (min-width: 800px) {
     .btn {
       font-size: 1.4rem; } }
-
-.btn--dismiss {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 3.325em;
-  padding: 2rem;
-  font-family: monospace;
-  font-size: 2rem;
-  color: rgba(255, 255, 255, 0.5);
-  -webkit-transition: color linear 0.2s;
-  -moz-transition: color linear 0.2s;
-  transition: color linear 0.2s; }
-  .btn--dismiss:hover {
-    color: white;
-    background-color: green; }

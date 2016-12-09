@@ -9,118 +9,123 @@
   </head>
   <body>
     <div class="hero-wrapper">
-      <video id="video--bg" muted autoplay loop poster="assets/img/wave-god.jpg">
+      <video id="videoBackground" muted autoplay loop poster="assets/img/wave-god.jpg" class="video__bg">
         <source src="assets/video/wavy-web.webm" type="video/webm">
         <source src="assets/video/wavy-web.mp4" type="video/mp4">
       </video>
-      <div class="overlay"></div>
-      <button class="video__btn btn--dismiss">&#9612;&#9612;</button>
+      <div class="overlay video__overlay"></div>
+      <button id="videoButton" class="video__btn">&#9612;&#9612;</button>
       <section class="hero">
         <h1>Fullscreen Video Background</h1>
         <p>YOLO hashtag pug, tofu mlkshk meh gochujang godard tumblr helvetica. Art party gastropub +1 lo-fi, roof party marfa artisan. Intelligentsia 90's organic, roof party marfa asymmetrical fanny pack everyday carry sustainable tacos cray.</p>
-        <nav><a href="#" class="btn btn--youtube testButtonHook">Test</a>
+        <nav><a id="curtainOpen" href="#" class="btn btn--youtube testButtonHook">Watch</a>
         </nav>
       </section>
     </div>
-    <script type="text/javascript">
-      var vid, videoBtn, playString, pauseString;
-      vid = document.getElementById("video--bg");
-      videoBtn = document.getElementsByClassName("video__btn")[0];
-      playString = "&#9658";
-      pauseString = "&#9612;&#9612";
-      
-      videoBtn.addEventListener("click", function() {
-        if (vid.paused) {      
-          vid.play();
-          this.innerHTML = pauseString;
-        } else {
-          vid.pause();
-          this.innerHTML = playString;
-        }
-      });      
-    </script>
-    <div class="youtubeCurtain yt__curtain video__curtain fullbleed bg-b flex-ver f-middle f-center isVisible"> 
-      <section class="hero">
-        <h2>Youtube Embed</h2>
-        <p>Write some-semi descriptive text write here so that this repo is even remotely useful to someone.</p>
-      </section>
+    <div class="youtubeCurtain yt__curtain video__curtain fullbleed bg-b flex-vert f-middle f-center ta-c">
+      <section class="hero"></section>
       <div class="wrapper">
         <div class="yt__box">
           <div id="ytPlayer"></div>
         </div>
+        <div class="yt__copy">
+          <h2>Youtube Embed</h2>
+          <p>Write some-semi descriptive text write here so that this repo is even remotely useful to someone.  </p>
+        </div>
+        <button class="youtubeClose yt__close">&#9747;</button>
       </div>
-      <button class="youtubeClose btn--dismiss top right absolute">&#9747;</button>
     </div>
-    <script type="text/javascript">
-      var curtain, target, videoIframe, youtubeBtn, isVisible;
-      curtain = document.getElementsByClassName('youtubeCurtain')[0];
-      youtubeBtn = document.getElementsByClassName('testButtonHook')[0];
-      curtainClose = document.getElementsByClassName('youtubeClose')[0];
-      
-      // for animation.css
-      var animationEntrance = "isVisible bounceInDown";
-      var animationExit = "bounceOutTop";
-      
-      function toggleVideoCurtain() {
-        var isVisible = curtain.classList.contains('isVisible');      
-        isVisible ? curtain.classList.remove('isVisible') : curtain.classList.add('isVisible');
-      }
-      
-      youtubeBtn.addEventListener('click', function(e) {
-        console.log('youtube trigger');
-        toggleVideoCurtain();
-      });
-      
-      curtainClose.addEventListener('click', function(e) {
-        console.log('youtube close');
-        toggleVideoCurtain();
-      });
-      
-      // 2. This code loads the IFrame Player API code asynchronously.
-      var tag = document.createElement('script');
-      tag.src = "https://www.youtube.com/iframe_api";
-      
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-      
-      // 3. This function creates an <iframe> (and YouTube player)
-      //    after the API code downloads.
-      var player;
-      function onYouTubeIframeAPIReady() {
-        console.log('onYouTubeIframeAPIReady fired')
-        player = new YT.Player('ytPlayer', {
-          height: '390',
-          width: '640',
-          videoId: 'ITZNHsad2fE',
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
-        });
-      }
-      
-      // 4. The API will call this function when the video player is ready.
-      function onPlayerReady(event) {
-        event.target.playVideo();
-      }
-      
-      // 5. The API calls this function when the player's state changes.
-      //    The function indicates that when playing a video (state=1),
-      //    the player should play for six seconds and then stop.
-      var done = false;
-      
-      function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING && !done) {
-          setTimeout(stopVideo, 6000);
-          done = true;
-        }
-      }
-      
-      function stopVideo() {
-        player.stopVideo();
-      }  
-      
-      console.log(player);
-    </script>
   </body>
 </html>
+<script type="text/javascript">
+  var vid, videoBtn, playString, pauseString;
+  vid = document.getElementById("videoBackground");
+  videoBtn = document.getElementById("videoButton");
+  playString = "&#9658";
+  pauseString = "&#9612;&#9612";
+  
+  videoBtn.addEventListener("click", function() {
+    if (vid.paused) {      
+      vid.play();
+      this.innerHTML = pauseString;
+    } else {
+      vid.pause();
+      this.innerHTML = playString;
+    }
+  });
+  
+  var curtain, target, videoIframe, youtubeBtn, isVisible;
+  curtain = document.getElementsByClassName('youtubeCurtain')[0];
+  youtubeBtn = document.getElementsByClassName('testButtonHook')[0];
+  curtainClose = document.getElementsByClassName('youtubeClose')[0];
+  curtainOpen = document.getElementById("curtainOpen");
+  
+  // for animation.css
+  var animationEntrance = "isVisible bounceInDown";
+  var animationExit = "bounceOutTop";
+  
+  function toggleVideoCurtain() {
+    var isVisible = curtain.classList.contains('isVisible');      
+    isVisible ? curtain.classList.remove('isVisible') : curtain.classList.add('isVisible');
+  }
+  
+  youtubeBtn.addEventListener('click', function(e) {
+    console.log('youtube trigger');
+    toggleVideoCurtain();
+  });
+  
+  curtainClose.addEventListener('click', function(e) {
+    console.log('youtube close');
+    toggleVideoCurtain();
+  });
+  
+  // 2. This code loads the IFrame Player API code asynchronously.
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+  
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  
+  // 3. This function creates an <iframe> (and YouTube player)
+  //    after the API code downloads.
+  var player;
+  function onYouTubeIframeAPIReady() {
+    console.log('onYouTubeIframeAPIReady fired')
+    player = new YT.Player('ytPlayer', {
+      height: '390',
+      width: '640',
+      videoId: 'ITZNHsad2fE',
+      playerVars: {
+        controls: 0,
+        showinfo: 0,
+      },
+      events: {
+        'onReady': onPlayerReady,
+        'onStateChange': onPlayerStateChange
+      }
+    });
+  }
+  
+  // 4. The API will call this function when the video player is ready.
+  function onPlayerReady(event) {
+    //- event.target.playVideo();
+  }
+  
+  // 5. The API calls this function when the player's state changes.
+  //    The function indicates that when playing a video (state=1),
+  //    the player should play for six seconds and then stop.
+  var done = false;
+  
+  function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.PLAYING && !done) {
+      setTimeout(stopVideo, 6000);
+      done = true;
+    }
+  }
+  
+  function stopVideo() {
+    player.stopVideo();
+  }  
+  
+  console.log(player);
+</script>

@@ -1,11 +1,11 @@
 .hero-wrapper
-  video#video--bg(muted autoplay loop poster="assets/img/wave-god.jpg")
+  video#videoBackground.video__bg(muted autoplay loop poster="assets/img/wave-god.jpg")
     source(src="assets/video/wavy-web.webm" type="video/webm")
     source(src="assets/video/wavy-web.mp4" type="video/mp4")
 
-  .overlay
+  .overlay.video__overlay
 
-  button.video__btn.btn--dismiss &#9612;&#9612;
+  button#videoButton.video__btn &#9612;&#9612;
         
   section.hero
     h1 Fullscreen Video Background
@@ -13,21 +13,6 @@
     nav
       //- a.btn(href="https://www.youtube.com/watch?v=ITZNHsad2fE" target="_blank") Watch
       //- a.btn(href="https://soundcloud.com/krooks-x-up/sets/stanley-vaughn-the-rarity" target="_blank") Listen
-      a.btn.btn--youtube.testButtonHook(href='#') Test
+      a#curtainOpen.btn.btn--youtube.testButtonHook(href='#') Watch
 
-script(type="text/javascript").
-  var vid, videoBtn, playString, pauseString;
-  vid = document.getElementById("video--bg");
-  videoBtn = document.getElementsByClassName("video__btn")[0];
-  playString = "&#9658";
-  pauseString = "&#9612;&#9612";
-  
-  videoBtn.addEventListener("click", function() {
-    if (vid.paused) {      
-      vid.play();
-      this.innerHTML = pauseString;
-    } else {
-      vid.pause();
-      this.innerHTML = playString;
-    }
-  });      
+    

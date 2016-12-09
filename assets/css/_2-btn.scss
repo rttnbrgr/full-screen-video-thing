@@ -1,19 +1,17 @@
 %buttonReset {
 	background-color: transparent;
 	border: none;
+	color: inherit;
 	&:hover { cursor: pointer; }
 	&:focus { outline: none; }
 }
 
-.btn--dismiss {
-	@extend %buttonReset;
-	display: block;
-}
+button { @extend %buttonReset; }
 
 .btn {		
 	display: inline-block;
 	margin: 1rem;
-	padding: 0.4em 1em;
+	padding: 0.4em 1em 0.5em;
 	font-size: $fz-mobile;
 	line-height: 1;
 	color: $link;
@@ -36,18 +34,3 @@
 	}
 }
 
-.btn--dismiss {
-	@extend %buttonReset;
-	@include position(fixed, 0 0 null null);
-	width: 3.325em;
-	padding: 2rem;
-	font-family: monospace;
-	font-size: 2rem;
-	color: rgba(255,255,255, 0.5);
-	@include transition(color linear 0.2s);
-
-	&:hover {
-		color: rgba(255,255,255,1);
-		background-color: green;		
-	}
-}

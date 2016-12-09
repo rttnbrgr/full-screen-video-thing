@@ -1,41 +1,39 @@
-#video--bg {
-	display: none;
-	@include position(fixed, 50% null null 50%);
-	z-index: -2;
-	min-width: 100%;
-	min-height: 100%;
-	@include size(auto);
-	@include transform(translateX(-50%) translateY(-50%) );
-	
-	background: url('../img/wave-god.jpg') center center no-repeat;
-	background-size: cover;	
-}
-
-.btn--dismiss,
-.video__btn {
-	display: none;
-	@include position(fixed, 0 0 null null);
-	width: 3.325em;
-	padding: 2rem;
-	
-	font-family: monospace;
-	font-size: 2rem;
-	color: rgba(255,255,255, 0.5);
-	@include transition(color linear 0.2s);
-	
-	background-color: transparent;
-	border: none;
-	
-	&:hover {
-		color: rgba(255,255,255,1);
-		cursor: pointer;
+.video {
+	&__bg {
+		display: none;
+		@include position(fixed, 50% null null 50%);
+		@include size(auto);
+		z-index: -2;
+		min-width: 100%;
+		min-height: 100%;
+		@include transform(translateX(-50%) translateY(-50%) );
+		background: url('../img/wave-god.jpg') center center no-repeat;
+		background-size: cover;	
 	}
 
-	&:focus { outline: none; }
-}
+	&__btn {
+		display: none;
+		@include position(fixed, 0 0 null null);
+		width: 3.325em;
+		padding: 2rem;
+		font-family: monospace;
+		font-size: 2rem;
+		color: rgba(255,255,255, 0.5);
+		@include transition(color linear 0.2s);	
+		
+		&:hover { 
+			color: rgba(255,255,255,1); 
+		}
 
-@media screen and (min-width: $bp) {
-	#video--bg, .video__btn {
-		display: block;
+		// .active { color: red; }
 	}
+
+	@media screen and (min-width: $bp) {
+		&__bg, 
+		&__btn {
+			display: block;
+		}
+	}
+
+
 }

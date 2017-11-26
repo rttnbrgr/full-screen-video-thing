@@ -4,17 +4,12 @@
 @import '0-comrade';
 // Base & Typography
 @import '1-base';
-// Modules [ Hero, Overlay, Video, Button ]
+// Modules [ Hero, Overlay, Video, Youtube, Button ]
 @import '2-hero';
 @import '2-overlay';
 @import '2-video';
 
 
-.bg {
-	&-w { background-color: #fff; }
-	&-b { background-color: #000; }
-	&-g { background-color: #ccc; }
-}
 
 .wrapper {
 	padding: 0 1em;
@@ -29,3 +24,9 @@
 @import '2-btn';
 
 
+// remove after npm update
+.bg {
+	&-w { background-color: #fff; }
+	&-b { background-color: #000; }
+	&-g { background-color: #ccc; }
+}

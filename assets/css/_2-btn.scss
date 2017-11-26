@@ -17,7 +17,6 @@ button { @extend %buttonReset; }
 	color: $link;
 	text-decoration: none;
 	text-transform: uppercase;
-	background-color: transparent;
 	min-width: 5.25em;
 	border: 1px solid $link;
 	@include transition(all .2s linear);
@@ -26,8 +25,6 @@ button { @extend %buttonReset; }
 		background-color: $link;
 		color: $dark;
 	}
-
-	&:focus { outline: none; }
 
 	@media screen and (min-width: 800px) {
 		font-size: $fz-desktop;
